@@ -157,6 +157,10 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
+          <div class="alert alert-success my-alert alert-dismissible fade show d-none" role="alert">
+            <strong>Terimakasih.</strong> Pesan anda berhasil dikirim!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
           <form name="form-kontak-kris">
             <div class="mb-3">
               <label for="nama" class="form-label">Nama Lengkap:</label>
@@ -171,7 +175,11 @@
               <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Kirim</button>
+            <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+            <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+              <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
           </form>
         </div>
       </div>
@@ -196,11 +204,32 @@
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbyX0U0l9Vj4VgoiGJoku0F9YafD7hPL7TUWzKXMwzUOvjuOouajuIr0CfJGuhYCxdI/exec'
       const form = document.forms['form-kontak-kris']
+
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.my-alert');
     
       form.addEventListener('submit', e => {
         e.preventDefault()
+
+        // ketika tombol submit diklik
+        //munculkan tombol loading, hilangkan tombol kirim
+        btnKirim.classList.toggle(d-none);
+        btnLoading.classList.toggle(d-none);
+
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => console.log('Success!', response))
+          .then(response => { 
+            //munculkan tombol loading, hilangkan tombol kirim
+            btnKirim.classList.toggle(d-none);
+            btnLoading.classList.toggle(d-none);
+
+            //tampilkan alert dan reset formnya
+            myAlert.classList.toggle(d-none);
+            form.reset();
+            
+            console.log('Success!', response)
+
+        })
           .catch(error => console.error('Error!', error.message))
       })
     </script>
