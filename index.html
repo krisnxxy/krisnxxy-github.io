@@ -157,18 +157,18 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
-          <form>
+          <form name="form-kontak-kris">
             <div class="mb-3">
               <label for="nama" class="form-label">Nama Lengkap:</label>
-              <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+              <input type="text" class="form-control" id="nama" aria-describedby="nama" name="nama" />
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="email" />
+              <input type="email" class="form-control" id="email" name="email" />
             </div>
             <div class="mb-3">
               <label for="pesan" class="form-label">Pesan:</label>
-              <textarea class="form-control" id="pesan" rows="3"></textarea>
+              <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Kirim</button>
@@ -192,5 +192,18 @@
     <!-- endfooter -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyX0U0l9Vj4VgoiGJoku0F9YafD7hPL7TUWzKXMwzUOvjuOouajuIr0CfJGuhYCxdI/exec'
+      const form = document.forms['form-kontak-kris']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+    </script>
   </body>
 </html>
