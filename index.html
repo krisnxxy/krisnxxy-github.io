@@ -11,6 +11,9 @@
     <!-- Bootsrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -28,7 +31,7 @@
               <a class="nav-link active" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About me</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#Gallery">Gallery</a>
@@ -44,7 +47,7 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
-      <img src="img/icon.jpg" alt="Krisna Nalley" width="200" class="rounded-circle img-thumbnail" />
+      <img src="img/icon.jpg" alt="Krisna Nalley" width="200" class="rounded-circle img-thumbnail"/>
       <h1 class="display-4">Krisna Nalley</h1>
       <p class="lead">Mahasiswa & Bulan</p>
 
@@ -67,12 +70,12 @@
           </div>
         </div>
         <div class="row justify-content-evenly fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos= "fade-right" data-aos-duration="2000">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. A corporis ipsam ipsa architecto voluptate sit! Eos modi explicabo obcaecati, dolorum libero voluptas officiis suscipit at incidunt, maiores impedit, officia sapiente?
             </p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos= "fade-left" data-aos-delay = "200" data-aos-duration="2000">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod commodi dolores quam rerum quidem eos excepturi sint alias voluptatem. Velit officia laboriosam suscipit eos, quos fugiat ipsum unde aspernatur maxime.</p>
           </div>
         </div>
@@ -97,7 +100,7 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-up">
             <img src="img/gallery/g1.jpg" class="card-img-top" alt="g1" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -105,7 +108,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-up" data-aos-delay="200">
             <img src="img/gallery/g2.jpg" class="card-img-top" alt="g2" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -113,7 +116,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-up" data-aos-delay="350">
             <img src="img/gallery/g3.jpg" class="card-img-top" alt="g3" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -121,7 +124,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-up" data-aos-delay="500">
             <img src="img/gallery/g4.jpg" class="card-img-top" alt="g4" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -129,7 +132,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-up" data-aos-delay="650">
             <img src="img/gallery/g5.jpg" class="card-img-top" alt="g5" />
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -200,6 +203,16 @@
     <!-- endfooter -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: "2000"
+      
+      }
+      );
+    </script>
 
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbyX0U0l9Vj4VgoiGJoku0F9YafD7hPL7TUWzKXMwzUOvjuOouajuIr0CfJGuhYCxdI/exec'
