@@ -47,9 +47,9 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
-      <img src="img/icon.jpg" alt="Krisna Nalley" width="200" class="rounded-circle img-thumbnail"/>
+      <img src="img/icon.jpg" alt="Krisna Nalley" width="200" class="rounded-circle img-thumbnail img-profile"/>
       <h1 class="display-4">Krisna Nalley</h1>
-      <p class="lead">Mahasiswa & Bulan</p>
+      <p class="lead" ></p>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
@@ -208,11 +208,19 @@
     <script>
       AOS.init({
         once: true,
-        duration: "2000"
-      
+        duration: "2000"      
       }
       );
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.from('.navbar', { duration: 1, y: -100, opacity: 0, ease: 'bounce'}) 
+      gsap.from('.img-profile', { duration: 1, rotateY: 360, opacity: 0, delay: 0.5}) 
+      gsap.from('.display-4', { duration: 1, x: -100, delay: 1.5, opacity: 0, ease: 'back'}) 
+      gsap.to('.lead', {duration : 3, delay: 2, text: 'Mahasiswa | sering lupa (;)', ease: 'bounce'})
+      </script>
 
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbyX0U0l9Vj4VgoiGJoku0F9YafD7hPL7TUWzKXMwzUOvjuOouajuIr0CfJGuhYCxdI/exec'
